@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Five Nights at Freddy's 2 — Fan Prototype</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app" id="app">
+      <section class="screen start-screen active" id="startScreen" aria-label="Стартовый экран">
+        <h1 class="game-title">Five Nights at Freddy's 2</h1>
+        <p class="subtitle">Fan Prototype — Night 1</p>
+        <div class="menu-box">
+          <button id="startNightBtn" class="btn primary">Начать Ночь 1</button>
+          <button id="howToBtn" class="btn">Как играть</button>
+        </div>
+        <div id="howToPanel" class="help-panel hidden">
+          <p>• Следи за камерами и музыкальной шкатулкой.</p>
+          <p>• Используй маску при угрозе в офисе.</p>
+          <p>• Береги заряд фонарика.</p>
+          <p>• Доживи до 6:00 AM.</p>
+        </div>
+      </section>
+
+      <section class="screen game-screen" id="gameScreen" aria-label="Игровой экран">
+        <header class="hud-top">
+          <div class="clock" id="clock">12:00 AM</div>
+          <div class="night-label">Night 1</div>
+          <div class="power">Flashlight: <span id="battery">100%</span></div>
+        </header>
+
+        <div class="office-view" id="officeView">
+          <div class="office-overlay">
+            <p id="officeMessage">Тихо... пока что.</p>
+          </div>
+          <div class="threat-indicator" id="threatIndicator">Угроза в офисе!</div>
+        </div>
+
+        <div class="controls">
+          <button class="btn" id="toggleCameraBtn">Открыть камеры</button>
+          <button class="btn" id="flashlightBtn">Фонарик</button>
+          <button class="btn" id="maskBtn">Надеть маску</button>
+          <button class="btn" id="leftVentBtn">Левая вентиляция</button>
+          <button class="btn" id="rightVentBtn">Правая вентиляция</button>
+        </div>
+
+        <section class="panel hidden" id="cameraPanel" aria-label="Камеры">
+          <div class="panel-header">
+            <h2>Камеры</h2>
+            <button class="btn small" id="closeCameraBtn">Закрыть</button>
+          </div>
+          <div class="camera-grid" id="cameraGrid"></div>
+          <div class="music-box">
+            <p>Музыкальная шкатулка: <span id="musicBoxValue">100%</span></p>
+            <button class="btn small" id="windMusicBoxBtn">Завести шкатулку</button>
+          </div>
+        </section>
+
+        <section class="panel hidden" id="maskPanel" aria-label="Маска">
+          <p>Маска надета. Оставайся неподвижным.</p>
+          <button class="btn small" id="removeMaskBtn">Снять маску</button>
+        </section>
+
+        <section class="panel hidden" id="nightEndPanel" aria-label="Конец ночи">
+          <h2 id="nightEndTitle">6:00 AM</h2>
+          <p id="nightEndText">Ночь завершена. Отличная работа!</p>
+          <button class="btn primary" id="backToMenuBtn">Вернуться в меню</button>
+        </section>
+      </section>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
